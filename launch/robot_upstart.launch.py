@@ -66,13 +66,21 @@ def generate_launch_description():
         convert_types=True,
     )
     namespaced_joy_teleop_param_file = RewrittenYaml(
-        source_file=PathJoinSubstitution([pkg_turtlebot4_custom_upstart, "config", "turtlebot4_joy_teleop.yaml"]),
+        source_file=PathJoinSubstitution(
+            [
+                pkg_turtlebot4_custom_upstart,
+                "config",
+                "turtlebot4_controller.config.yaml",
+            ]
+        ),
         root_key=namespace,
         param_rewrites={},
         convert_types=True,
     )
     namespaced_oakd_param_file = RewrittenYaml(
-        source_file=PathJoinSubstitution([pkg_turtlebot4_custom_upstart, "config", "oakd_pro.yaml"]),
+        source_file=PathJoinSubstitution(
+            [pkg_turtlebot4_custom_upstart, "config", "oakd_pro.yaml"]
+        ),
         root_key=namespace,
         param_rewrites={},
         convert_types=True,
