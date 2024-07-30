@@ -31,7 +31,7 @@ def install():
 
     turtlebot4_job = robot_upstart.Job(
         name="turtlebot4",
-        workspace_setup=os.environ["ROBOT_SETUP"],
+        workspace_setup="/home/ubuntu/ros2_ws/src/turtlebot4_custom_upstart/scripts/setup.bash",
         rmw=rmw,
         rmw_config=rmw_config,
         systemd_after="network-online.target",
