@@ -50,7 +50,7 @@ turtlebot4_node:
 
       # Menu entry must match a function
     menu:
-       entries: ["Dock", "Undock", "EStop", "Wall Follow Left", "Wall Follow Right", "Power", "RPLIDAR Stop", "RPLIDAR Start", "OAKD Stop", "OAKD Start", "Help"]
+      entries: ["Dock", "Undock", "EStop", "Wall Follow Left", "Wall Follow Right", "Power", "Help"]
 
     # Controller button functions
     # Buttons:
@@ -65,10 +65,9 @@ turtlebot4_node:
       x: ["Back"]
       up: ["Scroll Up"]
       down: ["Scroll Down"]
-      l2: []
-      r2: []
-      home: []
-      share: ["Dock", "Undock", "3000"]
+      l2: ["Wall Follow Left"]
+      r2: ["Wall Follow Right"]
+      home: ["Dock", "Undock", "3000"]
 
 turtlebot4_base_node:
   ros__parameters:
