@@ -120,6 +120,7 @@ def generate_launch_description():
             PythonLaunchDescriptionSource([joy_teleop_launch_file]),
             launch_arguments=[
                 ("namespace", namespace),
+                ("controller_config", namespaced_joy_teleop_param_file),
             ],
         ),
         IncludeLaunchDescription(PythonLaunchDescriptionSource([rplidar_launch_file])),
@@ -127,6 +128,7 @@ def generate_launch_description():
             PythonLaunchDescriptionSource([oakd_launch_file]),
             launch_arguments=[
                 ("camera", "oakd_pro"),
+                ("params_file", namespaced_oakd_param_file),
             ],
         ),
         IncludeLaunchDescription(
