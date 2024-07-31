@@ -11,13 +11,14 @@ def main():
     """
 
     # Back up the original launch file
-    subprocess.run(
-        shlex.split(
-            "sudo mv "
-            "/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py "
-            "/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py.bak"
+    if not os.path.exists("/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py.bak"):
+        subprocess.run(
+            shlex.split(
+                "sudo mv "
+                "/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py "
+                "/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py.bak"
+            )
         )
-    )
     print(
         "Backed up the original launch file (turtlebot4_bringup/launch/standard.launch.py)."
     )
