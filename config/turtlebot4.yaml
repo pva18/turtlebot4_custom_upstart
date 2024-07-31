@@ -65,8 +65,6 @@ turtlebot4_node:
       x: ["Back"]
       up: ["Scroll Up"]
       down: ["Scroll Down"]
-      l2: ["Wall Follow Left"]
-      r2: ["Wall Follow Right"]
       home: ["Dock", "Undock", "3000"]
 
 turtlebot4_base_node:
