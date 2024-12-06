@@ -10,13 +10,15 @@ def main():
     This script assumes that the ROS 2 workspace is located at /home/ubuntu/ros2_ws and was built using the colcon build command after downloading the turtlebot4_custom_upstart package.
     """
 
+    ros_distro = os.environ["ROS_DISTRO"]
+
     # Back up the original launch file
-    if not os.path.exists("/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py.bak"):
+    if not os.path.exists(f"/opt/ros/{ros_distro}/share/turtlebot4_bringup/launch/standard.launch.py.bak"):
         subprocess.run(
             shlex.split(
                 "sudo mv "
-                "/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py "
-                "/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py.bak"
+                f"/opt/ros/{ros_distro}/share/turtlebot4_bringup/launch/standard.launch.py "
+                f"/opt/ros/{ros_distro}/share/turtlebot4_bringup/launch/standard.launch.py.bak"
             )
         )
     print(
@@ -27,7 +29,7 @@ def main():
         shlex.split(
             "sudo cp "
             "/home/ubuntu/ros2_ws/src/turtlebot4_custom_upstart/launch/robot_upstart.launch.py "
-            "/opt/ros/humble/share/turtlebot4_bringup/launch/standard.launch.py"
+            f"/opt/ros/{ros_distro}/share/turtlebot4_bringup/launch/standard.launch.py"
         )
     )
     print(
